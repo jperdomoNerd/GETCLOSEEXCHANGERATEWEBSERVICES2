@@ -1,15 +1,16 @@
 {
-  "name": "getcloseexchangeratewebservices",
+  "name": "getcloseexchangeratewebservices2",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
   "license": "ISC",
-  "type": "module",
+  "author": "",
+  "type": "commonjs",
+  "main": "Server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
   "dependencies": {
-    "dotenv": "^17.2.3",
     "express": "^5.2.1",
     "puppeteer": "^24.33.0"
   }

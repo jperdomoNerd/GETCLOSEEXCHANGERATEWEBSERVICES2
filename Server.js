@@ -1,32 +1,10 @@
-import puppeteer from 'puppeteer';
-import express from 'express';
-import dotenv from "dotenv";
+const puppeteer = require('puppeteer');
+const express = require('express');
 
-dotenv.config();
 const app = express();
 
 async function getTend() {
-  const browser = await puppeteer.launch({
-    headless: 'new',
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--disable-dev-shm-usage',
-      '--disable-gpu',
-      '--single-process',
-      '--no-zygote',
-      '--disable-background-networking',
-      '--disable-background-timer-throttling',
-      '--disable-backgrounding-occluded-windows',
-      '--disable-renderer-backgrounding',
-      '--disk-cache-size=0'
-    ],
-    executablePath:
-      process.env.NODE_ENV === "production"
-        ? process.env.PUPPETEER_EXECUTABLE_PATH
-        : puppeteer.executablePath(),
-  });
-
+  const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
   await page.goto(
@@ -49,9 +27,6 @@ async function getTend() {
     todayExchangeRate,
     closingExchangeRate
   };
-  // } finally {
-  //   await browser.close();
-  // }
 }
 
 // routing
