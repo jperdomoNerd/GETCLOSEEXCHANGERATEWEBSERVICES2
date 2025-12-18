@@ -36,7 +36,7 @@ app.get('/', async (req, res) => {
     res.json(data);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ error: `Internal Server Error ${err.message}` });
+    res.status(500).json({ error: `xInternal Server Error ${err.message}` });
   }
 });
 
